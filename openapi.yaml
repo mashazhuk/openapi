@@ -1,0 +1,104 @@
+openapi: 3.0.3
+info:
+  title: Social Network API
+  description: Simple API for users and posts management.
+  version: 1.0.0
+servers:
+  - url: https://api.example.com/v1
+paths:
+  /users:
+    get:
+      summary: Get list of users
+      responses:
+        '200':
+          description: A list of users
+    post:
+      summary: Create a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '201':
+          description: User created
+  /users/{id}:
+    get:
+      summary: Get a user by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A user
+        '404':
+          description: User not found
+    put:
+      summary: Update a user
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: User updated
+    delete:
+      summary: Delete a user
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: User deleted
+  /posts:
+    get:
+      summary: Get list of posts
+      responses:
+        '200':
+          description: A list of posts
+    post:
+      summary: Create a new post
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Post'
+      responses:
+        '201':
+          description: Post created
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        username:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+    Post:
+      type: object
+      properties:
+        title:
+          type: string
+        content:
+          type: string
+        authorId:
+          type: integer
