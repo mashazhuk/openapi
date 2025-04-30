@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.0.2
 info:
   title: Social Network API
   description: Simple API for users and posts management.
