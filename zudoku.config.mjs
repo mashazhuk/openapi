@@ -1,5 +1,6 @@
 /** @type {import('zudoku').ZudokuConfig} */
 const config = {
+  basePath: "/openapi",
   topNavigation: [
     { id: "docs", label: "Documentation" },
     { id: "api", label: "API Reference" },
