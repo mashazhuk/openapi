@@ -4,17 +4,18 @@ const config = {
     { id: "docs", label: "Documentation" },
     { id: "api", label: "API Reference" },
     { id: "docs/about", label: "About" },
+    { id: "srs/general", label: "SRS" },
   ],
   sidebar: {
     docs: [
       {
         type: "category",
         label: "Overview",
-        items: ["docs/introduction", "docs/authorization", "docs/about"],
+        items: ["docs/installation", "docs/authorization", "docs/about"],
       },
     ],
   },
-  redirects: [{ from: "/", to: "/docs/introduction" }],
+  redirects: [{ from: "/", to: "/docs/installation" }],
   apis: {
     type: "file",
     input: "./apis/openapi.yaml",

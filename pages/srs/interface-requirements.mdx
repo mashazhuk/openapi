@@ -1,0 +1,17 @@
+---
+title: Interface Requirements
+---
+
+## Internal Interfaces:
+- Signal Preprocessing → Feature Extraction → Emotion Classifier (Pipeline communication)
+
+### External Interfaces:
+- REST API:
+  - `POST /analyze` → accepts audio file, returns result
+  - `GET /emotions` → returns list of supported emotions
+
+### Protocols and Formats:
+- Communication: HTTP
+- Format: JSON
+- Implementation Language: Python 3.10+
+

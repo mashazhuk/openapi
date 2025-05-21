@@ -1,0 +1,91 @@
+---
+title: Emotion detection system - Software Requirements Specification
+author: Nahorna Mariia, 8.1224
+---
+
+# Software Requirements Specification (SRS)
+
+## 1. General Description
+
+This system is designed to automatically analyze human speech in order to detect the speaker’s emotional state (e.g., happiness, sadness, anger) using modern speech processing and neural network technologies.
+
+### Objectives:
+- Develop an emotion detection engine based on audio input
+- Apply machine hearing techniques and acoustic signal analysis
+- Implement a REST API to process and return emotional classification results
+
+### Target Users:
+- AI and machine learning researchers
+- Voice interface developers
+- Psychodiagnostics specialists
+
+### Key Features:
+- Upload audio recordings (`.wav`, `.mp3`)
+- Signal pre-processing (noise removal, normalization)
+- Feature extraction (e.g., MFCC, spectrogram)
+- Emotion classification using a trained neural network
+- JSON output via REST API
+
+### Benefits:
+- Enables emotion-aware systems
+- Improves human-computer interaction
+- Supports accessibility and assistive technologies
+
+---
+
+## 2. Functional Requirements
+
+| ID | Description |
+|----|-------------|
+| FR-1 | User uploads an audio file in supported formats |
+| FR-2 | System applies signal cleaning and normalization |
+| FR-3 | Feature extraction (MFCCs, pitch, energy, spectrogram) |
+| FR-4 | Neural network classifies emotional state |
+| FR-5 | Result returned as JSON with emotion and confidence score |
+
+### Inputs:
+- Audio file (WAV/MP3)
+
+### Outputs:
+- JSON result: `{ "emotion": "happy", "confidence": 0.87 }`
+
+### Measurement Units:
+- Amplitude, frequency (Hz), time (s)
+
+### Valid Ranges:
+- Audio length: ≤ 10 seconds
+- File size: ≤ 1 MB
+
+---
+
+## 3. Interface Requirements
+
+### Internal Interfaces:
+- Signal Preprocessing → Feature Extraction → Emotion Classifier (Pipeline communication)
+
+### External Interfaces:
+- REST API:
+  - `POST /analyze` → accepts audio file, returns result
+  - `GET /emotions` → returns list of supported emotions
+
+### Protocols and Formats:
+- Communication: HTTP
+- Format: JSON
+- Implementation Language: Python 3.10+
+
+---
+
+## 4. Performance Requirements
+
+### Execution Performance:
+- Max response time: 3 seconds for ≤10s audio
+- Memory usage: ≤300MB per request
+- Classification accuracy: ≥85%
+
+### Static Requirements:
+- Support only `.wav` and `.mp3` formats
+
+### Dynamic Requirements:
+- Ready for real-time audio streaming extension
+
+---

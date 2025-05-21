@@ -2,8 +2,20 @@
 title: "Authorization"
 ---
 
-:::tip
+This project implements a basic JWT-based authentication system.
 
-Authorization page
+## Features:
+- User registration with email and password
+- Login and logout functionality
+- Token-based authentication for protected routes
+- Middleware to validate user sessions
 
-:::
+## Endpoints:
+- `POST /api/register` - Create a new user
+- `POST /api/login` - Authenticate user and return token
+- `GET /api/me` - Fetch authenticated user's profile
+- `POST /api/logout` - Invalidate token (optional)
+
+**Note:** Frontend stores token in `localStorage` or cookies for session management.
+
+---

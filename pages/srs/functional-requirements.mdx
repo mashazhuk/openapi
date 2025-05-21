@@ -1,0 +1,25 @@
+---
+title: Functional Requirements
+---
+
+| ID | Description |
+|----|-------------|
+| FR-1 | User uploads an audio file in supported formats |
+| FR-2 | System applies signal cleaning and normalization |
+| FR-3 | Feature extraction (MFCCs, pitch, energy, spectrogram) |
+| FR-4 | Neural network classifies emotional state |
+| FR-5 | Result returned as JSON with emotion and confidence score |
+
+### Inputs:
+- Audio file (WAV/MP3)
+
+### Outputs:
+- JSON result: `{ "emotion": "happy", "confidence": 0.87 }`
+
+### Measurement Units:
+- Amplitude, frequency (Hz), time (s)
+
+### Valid Ranges:
+- Audio length: ≤ 10 seconds
+- File size: ≤ 1 MB
+
