@@ -15,7 +15,7 @@ const config = {
       },
     ],
   },
-  redirects: [{ from: "/", to: "/docs/installation" }],
+  redirects: [{ from: "/", to: "/docs/installation" }, { from: "/docs/introduction", to: "/docs/installation" }],
   apis: {
     type: "file",
     input: "./apis/openapi.yaml",
